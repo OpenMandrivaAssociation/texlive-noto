@@ -3,7 +3,7 @@ Version:	64351
 Release:	2
 Summary:	Support for Noto fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/noto
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/noto
 License:	lppl ofl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto.doc.r%{version}.tar.xz
