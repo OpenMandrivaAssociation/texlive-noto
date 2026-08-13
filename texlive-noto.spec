@@ -12,10 +12,18 @@ Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/noto.r%{tl_revis
 Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/noto.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 This package provides LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX support for
 the NotoSerif, NotoSans and NotoSansMono families of fonts, designed by
 Steve Matteson for Google.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from noto:
+Map noto.map
+TL_DROPIN_EOF
